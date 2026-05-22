@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - User Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dash-header">
+            <h1 id="welcomeMsg">Welcome, User!</h1>
+            <button id="logoutBtn" class="btn btn-logout">Logout</button>
+        </header>
+
+        <main class="dash-content">
+            <div class="card profile-card">
+                <h3>Your Profile Information</h3>
+                <p><strong>Email:</strong> <span id="dashEmail">Loading...</span></p>
+                <p><strong>Role:</strong> <span id="dashRole" class="badge">Loading...</span></p>
+                <p><strong>Joined On:</strong> <span id="dashJoinDate">Loading...</span></p>
+            </div>
+
+            <div id="adminPanel" class="card admin-card" style="display: none; margin-top: 20px;">
+                <h3 style="color: #d9534f;">Admin Control Panel</h3>
+                <p style="margin-bottom: 10px;">List of all system registered users:</p>
+                <ul id="userList" class="user-list">
+                    </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
