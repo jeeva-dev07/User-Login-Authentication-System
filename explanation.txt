@@ -1,0 +1,45 @@
+1. What is password hashing and why is storing plain text passwords dangerous?
+Password hashing means converting a password into an encrypted-looking fixed string using a hashing algorithm like bcrypt or werkzeug.security in Flask.
+Why storing plain text passwords is dangerous?
+
+If passwords are stored as plain text:
+
+Anyone who accesses the database can see all user passwords.
+Hackers can misuse those passwords.
+Users often reuse passwords on other apps.
+It creates a major security risk.
+
+So during login:
+
+User enters password.
+Backend hashes the entered password.
+Backend compares it with the stored hash.
+If both match → login successful.
+2. What is a session and how does Flask use it?
+
+A session is a way to store user login information temporarily after authentication.
+
+In Flask, sessions are used to:
+
+Keep users logged in
+Track authenticated users between requests
+Store small user-related data
+
+Example flow:
+
+User logs in successfully.
+Flask creates a session.
+User data like user_id or username is stored in the session.
+Protected routes check the session to verify login status.
+3. What happens on your backend when a wrong password is entered?
+
+When a wrong password is entered:
+
+Backend receives login request.
+Backend searches the database for the user.
+If user exists:
+Entered password is hashed/verified.
+Backend compares entered password with stored hashed password.
+If passwords do not match:
+Login fails
+Backend returns an error response like:
